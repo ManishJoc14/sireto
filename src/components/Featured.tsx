@@ -10,7 +10,7 @@ import Image from "next/image";
 export default function FeaturedOn() {
   const sponsers = ["Altair", "Doro", "GolchhaGroup", "Neoteric", "SolidWorks"];
   const featured = [
-    "Dekhapadi",
+    "DekhaPadi",
     "Kantipur",
     "NayaPatrika",
     "NepalLive",
