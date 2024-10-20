@@ -3,7 +3,7 @@
 import React, { useRef } from "react";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
-import SponsersCarousel from "./SponsersCarousel";
+import SponsersSection from "./SponsersSection";
 
 const benefits = [
   "Global exposure through Formula Student Events.",
@@ -149,7 +149,7 @@ export default function PartnershipUi() {
       </div>
 
       {/* Sponsors Section */}
-      <SponsersCarousel />
+      <SponsersSection />
     </div>
   );
 }

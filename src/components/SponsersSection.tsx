@@ -16,7 +16,7 @@ const sponsers = [
   { name: "SolidWorks", id: 5 },
 ];
 
-export default function SponsersCarousel() {
+export default function SponsersSection() {
 
 
   const headingVariants = {

@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
-import Hamburger from './Hamburger';
+import HamburgerIcon from './HamburgerIcon';
 
 export default function HeaderUi() {
   const container = {
@@ -101,7 +101,7 @@ export default function HeaderUi() {
           </ul>
 
           {/* Hamburger Icon */}
-          <Hamburger />
+          <HamburgerIcon />
         </nav>
       </motion.header>
     </>
