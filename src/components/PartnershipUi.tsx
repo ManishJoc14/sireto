@@ -3,7 +3,7 @@
 import React, { useRef } from "react";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
-import SponsersCarousel from "./SponsersCarousel";
+import SponsersCarousel from "@/components/SponsersCarousel";
 
 
 

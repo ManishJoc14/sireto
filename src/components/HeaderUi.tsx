@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import Hamburger from "./Hamburger";
+import Hamburger from "@/components/Hamburger"
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
