@@ -1,12 +1,12 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import Hamburger from "@/components/Hamburger"
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
+import Hamburger from './Hamburger';
 
-export default function Header() {
+export default function HeaderUi() {
   const container = {
     hidden: { opacity: 0 },
     show: {

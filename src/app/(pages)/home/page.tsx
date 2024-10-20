@@ -1,9 +1,11 @@
 import React from "react";
-import FeaturedOn from "@/components/FeaturedOn";
-import AboutUs from "@/components/AboutUs";
-import AnimatedHero from "@/components/AnimatedHero";
-import PushingLimits from "@/components/PushingLimitsUi";
+
 import { Metadata } from "next";
+import AnimatedHero from "../../../components/AnimatedHero";
+import AboutUs from "../../../components/AboutUs";
+import PushingLimits from "../../../components/PushingLimitsUi";
+import FeaturedOn from "../../../components/FeaturedOn";
+
 // import Video from "next-video";
 // import animation from "/videos/Animation2.mp4";
 

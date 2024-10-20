@@ -1,6 +1,6 @@
 import React from "react";
-import FormulaBharat from "@/components/FormulaBharat2025";
 import { Metadata } from "next";
+import FormulaBharat from "../../../components/FormulaBharat2025";
 
 export const metadata: Metadata = {
   title: "Projects",

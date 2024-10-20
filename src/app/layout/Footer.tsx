@@ -1,4 +1,4 @@
-import FooterUi from "@/components/FooterUi";
+import FooterUi from "../../components/FooterUi";
 
 export default function Footer() {
   return (

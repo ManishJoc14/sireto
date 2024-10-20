@@ -1,5 +1,5 @@
-import ConnectUs from "@/components/ConnectUs";
 import { Metadata } from "next";
+import ConnectUs from "../../../components/ConnectUs";
 
 export const metadata: Metadata = {
   title: "Connect",
