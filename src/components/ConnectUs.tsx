@@ -37,7 +37,7 @@ const buttonVariants = {
   },
 };
 
-export default function ConnectContent() {
+export default function ConnectUs() {
   return (
     <div className="w-full py-12 md:py-24 lg:py-32 grid items-center">
       <div className="max-w-md mx-auto space-y-6 p-8 flex flex-col items-baseline">

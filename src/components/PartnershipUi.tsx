@@ -3,7 +3,8 @@
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import React, { useRef } from "react";
-import SponsersCarousel from "@/components/SponsersCarousel";
+import SponsersCarousel from "./sponsersCarousel";
+
 
 const benefits = [
   "Global exposure through Formula Student Events.",

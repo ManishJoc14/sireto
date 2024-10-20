@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Button } from "./ui/button";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -17,18 +16,6 @@ export default function Hamburger() {
     connect: "/connect",
   };
 
-  const handleScrollToDiv = (id: string) => {
-    const section = document.getElementById(id);
-    if (section) {
-      const sectionTop =
-        section.getBoundingClientRect().top + window.pageYOffset;
-      window.scrollTo({
-        top: sectionTop - 100,
-        behavior: "smooth",
-      });
-      toggleMenu();
-    }
-  };
 
   const listItemVariants = {
     closed: {

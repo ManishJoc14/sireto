@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
+import tailwindcssAnimate from "tailwindcss-animate";
 
-const config = {
+const config: Config = {
   darkMode: ["class"],
   content: [
     "./pages/**/*.{ts,tsx}",
@@ -69,7 +70,6 @@ const config = {
         "primary-shadow": "4px 4px 0 0 #64ffda",
       },
       keyframes: {
-        // top
         hamburgerOpenTop: {
           "0%": { top: "0", transform: "rotate(0)", width: "100%" },
           "100%": {
@@ -86,7 +86,6 @@ const config = {
             width: "100%",
           },
         },
-        // middle
         hamburgerOpenMiddle: {
           "0%": { transform: "scaleX(1)", opacity: "1" },
           "100%": { transform: "scaleX(0)", opacity: "0" },
@@ -95,7 +94,6 @@ const config = {
           "100%": { transform: "scaleX(1)", opacity: "1" },
           "0%": { transform: "scaleX(0)", opacity: "0" },
         },
-        // bottom
         hamburgerOpenBottom: {
           "0%": { top: "1rem", transform: "rotate(0)", width: "76%" },
           "100%": {
@@ -124,18 +122,16 @@ const config = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        // open
         hamburgerOpenTop: "hamburgerOpenTop 0.3s forwards",
         hamburgerOpenMiddle: "hamburgerOpenMiddle 0.3s forwards",
         hamburgerOpenBottom: "hamburgerOpenBottom 0.3s forwards",
-        // close
         hamburgerCloseTop: "hamburgerCloseTop 0.3s forwards",
         hamburgerCloseMiddle: "hamburgerCloseMiddle 0.3s forwards",
         hamburgerCloseBottom: "hamburgerCloseBottom 0.3s forwards",
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
-} satisfies Config;
+  plugins: [tailwindcssAnimate],
+};
 
 export default config;

@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
-import { delay, motion, useInView } from "framer-motion";
-import React, { useRef } from "react";
+import {  motion } from "framer-motion";
+import React from "react";
 
 const data = [
   {

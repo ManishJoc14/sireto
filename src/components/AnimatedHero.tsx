@@ -1,10 +1,10 @@
-"use client"; 
+"use client";
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { motion } from "framer-motion";
 import { GLTFLoader, OrbitControls } from "three/examples/jsm/Addons.js";
 
-const HeroAnimated = () => {
+export default function AnimatedHero() {
   const mountRef = useRef<HTMLDivElement | null>(null);
   const arcRadius = 15; // Radius of the circular path
   const totalAnimationTime = 2; // Total time for the animation in seconds
@@ -125,8 +125,8 @@ const HeroAnimated = () => {
         <motion.p
           variants={textVariants}
           initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }} // Trigger animation only once
+          whileInView="visible"
+          viewport={{ once: true }} // Trigger animation only once
           custom={0}
           className="text-xl md:text-2xl lg:text-3xl text-white uppercase font-bold"
         >
@@ -135,8 +135,8 @@ const HeroAnimated = () => {
         <motion.h1
           variants={textVariants}
           initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }} // Trigger animation only once
+          whileInView="visible"
+          viewport={{ once: true }} // Trigger animation only once
           custom={1}
           className="text-4xl md:text-6xl lg:text-9xl mx-auto text-brandPrimary font-extrabold leading-none"
         >
@@ -145,8 +145,8 @@ const HeroAnimated = () => {
         <motion.h2
           variants={textVariants}
           initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }} // Trigger animation only once
+          whileInView="visible"
+          viewport={{ once: true }} // Trigger animation only once
           custom={2}
           className="text-3xl md:text-4xl lg:text-6xl font-extrabold text-gray-400 opacity-50"
         >
@@ -164,11 +164,8 @@ const HeroAnimated = () => {
         Learn More
       </motion.a>
 
-
       {/* 3D Model Canvas */}
       <div className="absolute top-0 left-0 w-full h-full" ref={mountRef}></div>
     </div>
   );
-};
-
-export default HeroAnimated;
+}
