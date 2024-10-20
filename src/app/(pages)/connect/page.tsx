@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import ConnectContent from "@/components/connectContent";
+import ConnectContent from "@/components/ConnectContent";
 export const metadata: Metadata = {
   title: "Connect",
 };

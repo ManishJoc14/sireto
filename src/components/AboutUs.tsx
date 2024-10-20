@@ -1,9 +1,9 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 
-export default function About() {
+export default function AboutUs() {
   // Animation variants
   const imageVariants = {
     hidden: { x: "-100%", opacity: 0 },

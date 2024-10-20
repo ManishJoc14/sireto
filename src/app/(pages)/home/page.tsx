@@ -1,7 +1,7 @@
-import FeaturedOn from "@/components/featured";
-import About from "@/components/about";
-import HeroAnimated from "@/components/heroAnimated";
-import PushingLimits from "@/components/pushingLimits";
+import FeaturedOn from "@/components/Featured";
+import AboutUs from "@/components/AboutUs";
+import HeroAnimated from "@/components/HeroAnimated";
+import PushingLimits from "@/components/PushingLimits";
 import { Metadata } from "next";
 import React from "react";
 // import Video from "next-video";
@@ -19,7 +19,7 @@ export default function Home() {
         <source src="/Animation2.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video> */}
-      <About />
+      <AboutUs />
       <PushingLimits />
       <FeaturedOn />
     </>

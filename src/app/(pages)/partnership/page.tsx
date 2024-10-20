@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import PartnershipContent from "@/components/partnershipContent";
+import PartnershipContent from "@/components/PartnershipContent";
 
 export const metadata: Metadata = {
   title: "Partnership",
