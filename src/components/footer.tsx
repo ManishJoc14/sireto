@@ -1,74 +1,85 @@
+"use client"; 
 import Link from "next/link";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 export default function FooterUi() {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: false }); // Trigger  when in view
+
+  const textVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: i * 0.2 }, // Delay based on the index
+    }),
+  };
+
   return (
-    <footer className="bg-gray-900 py-6 text-gray-400 dark:bg-gray-900">
+    <footer className="bg-gray-900 py-6 text-gray-400" ref={ref}>
       <div className="container mx-auto flex flex-col items-center justify-between gap-4 px-4 sm:flex-row">
         <div className="flex flex-col items-center gap-4 sm:items-start">
-          <p className="text-sm py-1">
-            &copy; 2024 Team Shireto All rights reserved.
-          </p>
-          <p className="text-sm flex flex-col gap-1">
-            <span>TEAM SHIRETO</span>
-            <span>IOE Thapathali Campus,</span>
-            <span>Kathmandu, Nepal</span>
-          </p>
+          <motion.p
+            variants={textVariants}
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
+            custom={0} // Delay for the first text
+            className="text-sm py-1"
+          >
+            &copy; 2024 Team Shireto. All rights reserved.
+          </motion.p>
+          <div className="flex flex-col gap-1">
+            {["TEAM SHIRETO", "IOE Thapathali Campus,", "Kathmandu, Nepal"].map((text, i) => (
+              <motion.p
+                key={i}
+                variants={textVariants}
+                initial="hidden"
+                animate={inView ? "visible" : "hidden"}
+                custom={i + 1} // Delay for the subsequent texts
+                className="text-sm"
+              >
+                {text}
+              </motion.p>
+            ))}
+          </div>
         </div>
-        <nav className="flex flex-col items-start gap-8 sm:flex-row sm:items-center">
-          <Link
-            href="/"
-            className="text-sm hover:text-gray-200"
-            prefetch={false}
-          >
-            Privacy
-          </Link>
-          <Link
-            href="/"
-            className="text-sm hover:text-gray-200"
-            prefetch={false}
-          >
-            Terms
-          </Link>
-          <Link
-            href="/connect"
-            className="text-sm hover:text-gray-200"
-            prefetch={false}
-          >
-            Contact
-          </Link>
-          <Link
-            href="/connect"
-            className="text-sm hover:text-gray-200"
-            prefetch={false}
-          >
-            Join
-          </Link>
-          <div className="flex items-center gap-8">
-            <Link
-              href="/"
-              className="text-sm hover:text-gray-200"
-              prefetch={false}
+        <nav className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
+          {["Privacy", "Terms", "Contact", "Join"].map((linkText, i) => (
+            <motion.div
+              key={i}
+              variants={textVariants}
+              initial="hidden"
+              animate={inView ? "visible" : "hidden"}
+              custom={i + 4} // Further delay for navigation links
             >
-              <TwitterIcon className="h-5 w-5" />
+              <Link href="/" className="text-sm hover:text-gray-200" prefetch={false}>
+                {linkText}
+              </Link>
+            </motion.div>
+          ))}
+          <div className="flex items-center gap-4">
+            <Link href="/" className="text-sm hover:text-gray-200" prefetch={false} aria-label="Twitter">
+              <TwitterIcon className="h-5 w-5 transition-transform transform hover:scale-110" />
             </Link>
-            <Link
-              href="/"
-              className="text-sm hover:text-gray-200"
-              prefetch={false}
-            >
-              <FacebookIcon className="h-5 w-5" />
+            <Link href="/" className="text-sm hover:text-gray-200" prefetch={false} aria-label="Facebook">
+              <FacebookIcon className="h-5 w-5 transition-transform transform hover:scale-110" />
             </Link>
-            <Link
-              href="/"
-              className="text-sm hover:text-gray-200"
-              prefetch={false}
-            >
-              <LinkedinIcon className="h-5 w-5" />
+            <Link href="/" className="text-sm hover:text-gray-200" prefetch={false} aria-label="LinkedIn">
+              <LinkedinIcon className="h-5 w-5 transition-transform transform hover:scale-110" />
             </Link>
           </div>
         </nav>
       </div>
-      <p className="text-sm text-center py-4">Made with ❤️ by Manish</p>
+      <motion.p
+        variants={textVariants}
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+        custom={8} // Further delay for the final text
+        className="text-sm text-center py-4"
+      >
+        Made with ❤️ by Manish
+      </motion.p>
     </footer>
   );
 }

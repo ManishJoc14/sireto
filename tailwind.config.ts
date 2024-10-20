@@ -1,13 +1,13 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 
 const config = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -18,10 +18,15 @@ const config = {
       },
     },
     extend: {
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "gradient-conic":
+          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      },
       colors: {
         border: "hsl(var(--border))",
-        brandPrimary : "#E11D3A",
-        brandAccent  : "#F7941D",
+        brandPrimary: "#E11D3A",
+        brandAccent: "#F7941D",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
@@ -60,7 +65,53 @@ const config = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      boxShadow: {
+        "primary-shadow": "4px 4px 0 0 #64ffda",
+      },
       keyframes: {
+        // top
+        hamburgerOpenTop: {
+          "0%": { top: "0", transform: "rotate(0)", width: "100%" },
+          "100%": {
+            top: "0.5rem",
+            transform: "rotate(315deg)",
+            width: "100%",
+          },
+        },
+        hamburgerCloseTop: {
+          "100%": { top: "0", transform: "rotate(0)", width: "100%" },
+          "0%": {
+            top: "0.5rem",
+            transform: "rotate(315deg)",
+            width: "100%",
+          },
+        },
+        // middle
+        hamburgerOpenMiddle: {
+          "0%": { transform: "scaleX(1)", opacity: "1" },
+          "100%": { transform: "scaleX(0)", opacity: "0" },
+        },
+        hamburgerCloseMiddle: {
+          "100%": { transform: "scaleX(1)", opacity: "1" },
+          "0%": { transform: "scaleX(0)", opacity: "0" },
+        },
+        // bottom
+        hamburgerOpenBottom: {
+          "0%": { top: "1rem", transform: "rotate(0)", width: "76%" },
+          "100%": {
+            top: "0.5rem",
+            transform: "rotate(405deg)",
+            width: "100%",
+          },
+        },
+        hamburgerCloseBottom: {
+          "100%": { top: "1rem", transform: "rotate(0)", width: "76%" },
+          "0%": {
+            top: "0.5rem",
+            transform: "rotate(405deg)",
+            width: "100%",
+          },
+        },
         "accordion-down": {
           from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
@@ -73,10 +124,18 @@ const config = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        // open
+        hamburgerOpenTop: "hamburgerOpenTop 0.3s forwards",
+        hamburgerOpenMiddle: "hamburgerOpenMiddle 0.3s forwards",
+        hamburgerOpenBottom: "hamburgerOpenBottom 0.3s forwards",
+        // close
+        hamburgerCloseTop: "hamburgerCloseTop 0.3s forwards",
+        hamburgerCloseMiddle: "hamburgerCloseMiddle 0.3s forwards",
+        hamburgerCloseBottom: "hamburgerCloseBottom 0.3s forwards",
       },
     },
   },
   plugins: [require("tailwindcss-animate")],
-} satisfies Config
+} satisfies Config;
 
-export default config
+export default config;
