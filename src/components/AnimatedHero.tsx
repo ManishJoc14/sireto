@@ -6,7 +6,7 @@ import { GLTFLoader, OrbitControls } from "three/examples/jsm/Addons.js";
 
 export default function AnimatedHero() {
   const mountRef = useRef<HTMLDivElement | null>(null);
-  const arcRadius = 15; // Radius of the circular path
+  const arcRadius = 10; // Radius of the circular path
   const totalAnimationTime = 2; // Total time for the animation in seconds
   let startTime: number | null = null; // Variable to track the start time
   let carModel: any;
@@ -49,11 +49,11 @@ export default function AnimatedHero() {
 
     // Load F1 car model
     const loader = new GLTFLoader();
-    loader.load("/3d-models/f1_generic_red.glb", (gltf: any) => {
+    loader.load("/3d-models/main.glb", (gltf: any) => {
       carModel = gltf.scene;
-      carModel.position.set(5, 5, 0); // initial position
-      carModel.scale.set(1, 1, 1); // Start small
-      carModel.rotation.y = -Math.PI / 3; // Rotate car to face left
+      carModel.position.set(25, -4, 0); // initial position
+      carModel.scale.set(0.4, 0.4, 0.4); // Start small
+      carModel.rotation.y = 2 * Math.PI  ; // Rotate car to face right
       scene.add(carModel);
     });
 
@@ -62,8 +62,6 @@ export default function AnimatedHero() {
     controls.enableDamping = true;
     controls.dampingFactor = 0.05;
     controls.enableZoom = true;
-    controls.minDistance = 10;
-    controls.maxDistance = 30;
 
     // Handle window resize
     const handleResize = () => {
@@ -84,12 +82,12 @@ export default function AnimatedHero() {
       if (carModel && elapsedTime <= totalAnimationTime) {
         const t = elapsedTime / totalAnimationTime; // Normalized time (0 to 1)
         const angle = Math.PI * t; // Create an angle
-        carModel.position.x = arcRadius * Math.cos(angle) + 10; // X position
-        carModel.position.z = arcRadius * Math.sin(angle); // Z position
-        carModel.position.y = -4;
+        carModel.position.x = arcRadius * Math.cos(angle) + 60; // X position
+        carModel.position.z = arcRadius * Math.cos(angle) - 20 ; // Z position
+        carModel.position.y = -40;
 
         // Scale the car as it approaches the center
-        const scaleFactor = 1 + t * 3; // Scale from 1 to 4
+        const scaleFactor = 1 + t * 2; // Scale from 1 to 3
         carModel.scale.set(scaleFactor, scaleFactor, scaleFactor);
       }
 
