@@ -1,4 +1,4 @@
-import HeaderUi from "@/components/Header";
+import HeaderUi from "@/components/HeaderUi";
 
 export default function Header() {
     return (

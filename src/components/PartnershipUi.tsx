@@ -1,9 +1,10 @@
 "use client";
 
+import React, { useRef } from "react";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
-import React, { useRef } from "react";
-import SponsersCarousel from "./sponsersCarousel";
+import SponsersCarousel from "./SponsersCarousel";
+
 
 
 const benefits = [
@@ -34,7 +35,7 @@ const supportOptions = [
   },
 ];
 
-export default function PartnershipContent() {
+export default function PartnershipUi() {
   const headerRef = useRef(null);
   const benefitsRef = useRef(null);
   const headerInView = useInView(headerRef, { once: true });

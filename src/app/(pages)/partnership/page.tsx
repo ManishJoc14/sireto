@@ -1,4 +1,4 @@
-import PartnershipContent from "@/components/PartnershipUi";
+import PartnershipUi from "@/components/PartnershipUi";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -6,5 +6,5 @@ export const metadata: Metadata = {
 };
 
 export default function Partnership() {
-  return <PartnershipContent />;
+  return <PartnershipUi />;
 }
