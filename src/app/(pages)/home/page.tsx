@@ -1,3 +1,5 @@
+import { unstable_noStore as noStore } from 'next/cache';
+
 import FeaturedOn from "@/components/Featured";
 import AboutUs from "@/components/AboutUs";
 import HeroAnimated from "@/components/HeroAnimated";
@@ -11,6 +13,7 @@ export const metadata: Metadata = {
   title: "Home",
 };
 export default function Home() {
+  noStore();
   return (
     <>
       <HeroAnimated />
