@@ -6,8 +6,8 @@ import { GLTFLoader, OrbitControls } from "three/examples/jsm/Addons.js";
 
 export default function AnimatedHero() {
   const mountRef = useRef<HTMLDivElement | null>(null);
-  const arcRadius = 10; // Radius of the circular path
-  const totalAnimationTime = 2; // Total time for the animation in seconds
+  const arcRadius = 20; // Radius of the circular path
+  const totalAnimationTime = 3 // Total time for the animation in seconds
   let startTime: number | null = null; // Variable to track the start time
   let carModel: any;
 
@@ -51,7 +51,7 @@ export default function AnimatedHero() {
     const loader = new GLTFLoader();
     loader.load("/3d-models/main.glb", (gltf: any) => {
       carModel = gltf.scene;
-      carModel.position.set(25, -4, 0); // initial position
+      carModel.position.set(35, -4, 0); // initial position
       carModel.scale.set(0.4, 0.4, 0.4); // Start small
       carModel.rotation.y = 2 * Math.PI  ; // Rotate car to face right
       scene.add(carModel);
@@ -82,12 +82,12 @@ export default function AnimatedHero() {
       if (carModel && elapsedTime <= totalAnimationTime) {
         const t = elapsedTime / totalAnimationTime; // Normalized time (0 to 1)
         const angle = Math.PI * t; // Create an angle
-        carModel.position.x = arcRadius * Math.cos(angle) + 60; // X position
+        carModel.position.x = arcRadius * Math.cos(angle) + 20; // X position
         carModel.position.z = arcRadius * Math.cos(angle) - 20 ; // Z position
-        carModel.position.y = -40;
+        carModel.position.y = -80;
 
         // Scale the car as it approaches the center
-        const scaleFactor = 1 + t * 2; // Scale from 1 to 3
+        const scaleFactor = 1 + t * 5; // Scale from 1 to 6
         carModel.scale.set(scaleFactor, scaleFactor, scaleFactor);
       }
 
@@ -117,7 +117,7 @@ export default function AnimatedHero() {
   };
 
   return (
-    <div className="relative h-screen w-full bg-black overflow-hidden flex flex-col gap-4 justify-start items-start">
+    <div className="relative h-screen bg-slate-100 w-full overflow-hidden flex flex-col gap-4 justify-start items-start">
       {/* Animated Text Overlay */}
       <motion.div className="z-10 ml-10 sm:ml-24 mt-10 space-y-2">
         <motion.p
@@ -126,7 +126,7 @@ export default function AnimatedHero() {
           whileInView="visible"
           viewport={{ once: true }} // Trigger animation only once
           custom={0}
-          className="text-xl md:text-2xl lg:text-3xl text-white uppercase font-bold"
+          className="text-xl md:text-2xl lg:text-3xl  uppercase font-bold"
         >
           Where Speed Meets Innovation
         </motion.p>
@@ -154,13 +154,23 @@ export default function AnimatedHero() {
       {/* Animated Call to Action Button */}
       <motion.a
         href="#"
-        className="mt-8 ml-10 sm:ml-24 inline-flex z-10 h-12 items-center justify-center rounded-md bg-brandPrimary px-10 text-sm font-medium text-gray-50 shadow transition-colors"
+        className="mt-44 ml-10 sm:ml-24 inline-flex z-10 h-12 items-center justify-center rounded-md bg-brandPrimary px-10 text-sm font-medium text-gray-50 shadow transition-colors"
         initial={{ opacity: 0, scale: 0.7 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.5 }}
       >
         Learn More
       </motion.a>
+
+      <motion.p 
+          variants={textVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }} // Trigger animation only once
+          custom={5}
+          className="mx-auto mt-32 text-lg md:text-xl lg:text-2xl font-extrabold text-slate-800 z-10">
+      {`"Pushing Limits, Chasing Victory"`}
+      </motion.p>  
 
       {/* 3D Model Canvas */}
       <div className="absolute top-0 left-0 w-full h-full" ref={mountRef}></div>
