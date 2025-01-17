@@ -32,6 +32,7 @@ export default function HeaderUi() {
   const navLinks = {
     home: "/",
     projects: "/projects",
+    teams: "/teams",
     partnership: "/partnership",
     connect: "/connect",
   };
@@ -63,9 +64,8 @@ export default function HeaderUi() {
         variants={container}
         initial="hidden"
         animate="show"
-        className={`flex backdrop-blur-md bg-slate-900 px-10 sm:px-12 py-4 sm:py-5 items-center justify-between text-slate-100 z-50 transition-all duration-500 ease-in-out overflow-x-clip sticky ${
-          isSticky ? "top-0 left-0 shadow-lg" : "-top-24 left-0"
-        }`}
+        className={`flex backdrop-blur-md bg-slate-900 px-10 sm:px-12 py-4 sm:py-5 items-center justify-between text-slate-100 z-50 transition-all duration-500 ease-in-out overflow-x-clip sticky ${isSticky ? "top-0 left-0 shadow-lg" : "-top-24 left-0"
+          }`}
       >
         {/* Logo */}
         <Link
@@ -88,9 +88,8 @@ export default function HeaderUi() {
               >
                 <Link href={path}>
                   <span
-                    className={`hover:text-brandPrimary ${
-                      pathname === path && "text-brandPrimary"
-                    }`}
+                    className={`hover:text-brandPrimary ${pathname === path && "text-brandPrimary"
+                      }`}
                   >
                     {item.charAt(0).toUpperCase() + item.slice(1)}{" "}
                     {/* Capitalize first letter */}

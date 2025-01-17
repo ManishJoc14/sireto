@@ -1,4 +1,16 @@
-[
+export interface TeamData {
+  name: string;
+  department: string;
+  year: string;
+  phone: string;
+  email: string;
+  linkedin: string;
+  favorite_dessert: string;
+  role: string;
+};
+
+
+export const teamData: TeamData[] = [
   {
     name: "Rohit Pati",
     department: "Management",
