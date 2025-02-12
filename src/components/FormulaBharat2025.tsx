@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import {  motion } from "framer-motion";
+import { motion } from "framer-motion";
 import React from "react";
 
 const data = [
@@ -98,6 +98,16 @@ export default function FormulaBharat() {
     }),
   };
 
+  const bentoGridVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  }
+
   const projectBharatImages = [
     "back-1",
     "front-1",
@@ -141,25 +151,29 @@ export default function FormulaBharat() {
 
       {/* Image Gallery */}
       <section className="w-full py-12 md:py-20 lg:py-24">
-        <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-4 md:px-6">
-          {projectBharatImages.map((design, i) => (
-            <motion.div
-              key={i}
-              variants={imageVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }} // Trigger animation only once
-              custom={i}
-            >
-              <Image
-                src={`/project_bharat_2025_Designs/${design}.png`}
-                alt="Formula Bharat 2025 Design"
-                width={600}
-                height={400}
-                className="rounded-lg object-cover hover:scale-[1.02] transition-all duration-300"
-              />
-            </motion.div>
-          ))}
+        <div className="container px-4 md:px-6">
+          <div className="grid grid-cols-4 grid-rows-3 gap-4 aspect-[4/3]">
+            {projectBharatImages.map((design, i) => (
+              <motion.div
+                key={i}
+                variants={imageVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                custom={i}
+                className={`rounded-lg overflow-hidden ${i === 0 ? "col-span-2 row-span-2" : ""
+                  } ${i === 1 ? "col-span-2" : ""} ${i === 5 ? "col-span-2" : ""}`}
+              >
+                <Image
+                  src={`/project_bharat_2025_Designs/${design}.png`}
+                  alt={`Formula Bharat 2025 Design ${i + 1}`}
+                  width={600}
+                  height={400}
+                  className="w-full h-full object-cover hover:scale-[1.02] transition-all duration-300"
+                />
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
