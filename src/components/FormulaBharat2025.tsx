@@ -121,7 +121,7 @@ export default function FormulaBharat() {
   return (
     <div className="w-full mx-auto">
       {/* Header Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-[url(/background_images/neon-01.jpg)] bg-center bg-cover bg-no-repeat">
+      <section className="w-full py-12 md:py-24 lg:py-32 bg-[url(/background_images/gauze-08.jpeg)] bg-center bg-cover bg-no-repeat">
         <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6 lg:gap-10">
           <div className="space-y-3">
             <motion.h1

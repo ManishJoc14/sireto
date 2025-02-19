@@ -41,7 +41,11 @@ export default function PartnershipUi() {
 
   const headerVariants = {
     hidden: { opacity: 0, y: -20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: i * 0.2, duration: 0.6 },
+    }),
   };
 
   const cardVariants = {
@@ -68,17 +72,33 @@ export default function PartnershipUi() {
   };
 
   return (
-    <div className="w-full container mx-auto p-6 md:p-8 lg:p-10">
-      {/* Header Section */}
-      <motion.h1
-        ref={headerRef}
-        initial="hidden"
-        animate={headerInView ? "visible" : "hidden"}
-        variants={headerVariants}
-        className="text-3xl text-center py-4 text-gray-900 dark:text-gray-200 font-bold mb-6"
-      >
-        HOW YOU CAN SUPPORT US
-      </motion.h1>
+    <div className="w-full mx-auto">
+      <section className="w-full py-12 md:py-24 lg:py-32 bg-[url(/background_images/gauze-01.jpeg)] bg-center bg-cover bg-no-repeat">
+        <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6 lg:gap-10">
+          <div className="space-y-3">
+            <motion.h1
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }} // Trigger animation only once
+              variants={headerVariants}
+              custom={1}
+              className="text-3xl text-white font-bold tracking-tighter sm:text-4xl md:text-5xl"
+            >
+             How to Partner with Us
+            </motion.h1>
+            <motion.p
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }} // Trigger animation only once
+              variants={headerVariants}
+              custom={2}
+              className="mx-auto max-w-[700px] text-white md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"
+            >
+              We are looking for partners who can support us in our journey.
+            </motion.p>
+          </div>
+        </div>
+      </section>
 
       {/* Support Options */}
       <div
@@ -90,7 +110,7 @@ export default function PartnershipUi() {
             variants={cardVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }} 
+            viewport={{ once: true }}
             custom={i}
             className="bg-rose-50 hover:bg-brandPrimary transition-all duration-300 hover:text-white dark:bg-gray-800 rounded-lg p-8"
           >
@@ -136,7 +156,7 @@ export default function PartnershipUi() {
                 variants={listItemVariants}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true }} 
+                viewport={{ once: true }}
                 custom={i}
                 className="flex items-start"
               >
