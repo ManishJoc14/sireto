@@ -14,10 +14,10 @@ export const metadata: Metadata = {
   },
   description:
     "Shireto: Pioneering design solutions for motorsports and beyond. Explore our Formula Bharat 2025 project and more.",
-  keywords: ["Shireto", "Formula Bharat", "motorsports", "design", "innovation", "Nextjs"],
+  keywords: ["Team", "Team Shireto", "Shireto", "Formula Bharat", "motorsports","robotics", "design", "innovation", "Nextjs"],
   openGraph: {
     title: "Shireto - Innovative Design Solutions",
-    description: "Discover cutting-edge designs at Shireto, including our Formula Bharat 2025 project.",
+    description: "Discover cutting-edge motorsports and robotics at Shireto, including our Formula Bharat 2025 project.",
     url: "https://shireto.vercel.app",
     siteName: "Shireto",
     images: [
@@ -34,8 +34,11 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Shireto - Innovative Design Solutions",
-    description: "Explore Shireto's cutting-edge designs, including our Formula Bharat 2025 project.",
+    description: "Discover cutting-edge motorsports and robotics at Shireto, including our Formula Bharat 2025 project.",
     images: ["https://shireto.vercel.app/_next/image?url=%2Flogo.png&w=96&q=75"],
+  },
+  verification: {
+    google: "xgbXuHClszfU2-0v5ix743RmG2UuA6ZG2Uq36KqN3y0",
   },
   robots: {
     index: true,

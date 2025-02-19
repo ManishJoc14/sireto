@@ -121,7 +121,7 @@ export default function FormulaBharat() {
   return (
     <div className="w-full mx-auto">
       {/* Header Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-rose-200 dark:bg-gray-800">
+      <section className="w-full py-12 md:py-24 lg:py-32 bg-[url(/background_images/neon-01.jpg)] bg-center bg-cover bg-no-repeat">
         <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6 lg:gap-10">
           <div className="space-y-3">
             <motion.h1
@@ -130,7 +130,7 @@ export default function FormulaBharat() {
               viewport={{ once: true }} // Trigger animation only once
               variants={headerVariants}
               custom={1}
-              className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl"
+              className="text-3xl text-white font-bold tracking-tighter sm:text-4xl md:text-5xl"
             >
               FORMULA BHARAT 2025
             </motion.h1>
@@ -140,7 +140,7 @@ export default function FormulaBharat() {
               viewport={{ once: true }} // Trigger animation only once
               variants={headerVariants}
               custom={2}
-              className="mx-auto max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400"
+              className="mx-auto max-w-[700px] text-white md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"
             >
               Discover the future of Indian motorsports with our cutting-edge
               formula-style vehicle design.
